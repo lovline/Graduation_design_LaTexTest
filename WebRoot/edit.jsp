@@ -19,10 +19,12 @@
 </script>
 
 <body>
-   <textarea id="ckeditor" name="ckeditor" rows="5" cols="30"></textarea>
-   <script type="text/javascript">CKEDITOR.replace("ckeditor");</script>
-
-   <div id="tmp"></div>
+	<form action="edit" method="post">
+	   <textarea id="ckeditor" name="ckeditor" rows="5" cols="30"></textarea>
+	   <script type="text/javascript">CKEDITOR.replace("ckeditor");</script>
+	
+	   <div id="tmp"></div>
+    </form>
 </body>
 
 </html>

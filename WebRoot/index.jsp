@@ -36,7 +36,7 @@
 			<tbody>
 				<tr>
 					<td style="color: green;">
-						<div id="math" class="math">这里将显示输入</div>
+						<div id="math" class="math">这里将显示输入</div>						
 						<div id="tmp" style="display: none;">在这里输入</div>
 					</td>
 				</tr>
@@ -46,7 +46,5 @@
 			</tbody>
 		</table>
 	</div>
-
-
 </body>
 </html>

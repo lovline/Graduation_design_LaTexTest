@@ -17,7 +17,6 @@
 <html>
 <head>
 <base href="<%=basePath%>">
-
 <title>temproray title</title>
 
 <meta http-equiv="pragma" content="no-cache">
