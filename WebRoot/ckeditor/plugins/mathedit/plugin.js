@@ -157,7 +157,7 @@ CKEDITOR.plugins.add( pluginName, {
 						image = editor.document.createElement( 'img' );
 						image.setAttribute('class', mathImgClass);
 						// add some initial-value
-						image.setAttribute('title', 'x^2');
+						image.setAttribute('title', '');
 						dialog.insertMode = true;
 					}
 					else {
