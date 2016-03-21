@@ -9,7 +9,7 @@
 	String basePath = request.getScheme() + "://"
 			+ request.getServerName() + ":" + request.getServerPort()
 			+ path + "/";
-	System.out.println(basePath);
+	//System.out.println(basePath);
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -27,6 +27,7 @@
 <script type='text/javascript'
 	src='MathJax-2.4-latest/MathJax.js?config=TeX-AMS-MML_SVG-full'></script>
 <script src="${pageContext.request.contextPath}/js/jquery.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.min.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/upload.css">
 <link rel="Shortcut Icon" href="images/titlebg.ico" />
 <script type="text/javascript" src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.min.js"></script>
