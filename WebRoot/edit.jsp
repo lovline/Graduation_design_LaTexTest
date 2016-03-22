@@ -18,17 +18,18 @@
   	}); 
 	
 	function LoadXMLDoc1(){
+		var filename = $("#filename").val();
 		$.ajax({ 
-			//alert($("#filename").value);
 		    type : "GET", 
-		    //这里有一个问题
-		    url : "upload/$('#filename').value", 
+		    //这里有一个问题--解决了。。
+		    url : "upload/"+filename+"", 
 		    success : function(data){ 
 		        //alert(data);
 		        var editor=CKEDITOR.instances.ckeditor;
 		        editor.setData(data);
 		    }, 
 		    error:function(){ 
+		    	//alert($("#filename").val());
 		        alert('fail'); 
 		    } 
 		}); 
@@ -58,7 +59,7 @@
 			<button class="btn btn-primary btn-lg btn-block">(先选择一个上传的文件后点击)上传本地文件</button>
    			<hr>
    			<button type="button" onclick="LoadXMLDoc1()" class="btn btn-primary btn-lg btn-block">将上传的文本在ckeditor中显示</button> 
-   			<input id="filename" type="text" value="${ fileName }" />
+   			<input id="filename" type="hidden" value="${ fileName }" />
    		</div>
 	</form>
 
