@@ -1,5 +1,6 @@
 package com.xidian.graduation;
 
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -13,11 +14,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-
 @WebServlet("/edit")
 public class EditServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+    
+	
     public EditServlet() {
         super();
     }
@@ -31,8 +32,8 @@ public class EditServlet extends HttpServlet {
 		//System.out.println("this is edit action.");
 		String contents = request.getParameter("ckeditor");
 		System.out.println(contents);
-		
-		if(contents!="" && contents!=null){
+	    
+	    if(contents!="" && contents!=null){
 			
 			File file = new File("d:/ckeditorContent/test.txt");
 		    PrintStream ps = new PrintStream(new FileOutputStream(file));
@@ -47,8 +48,10 @@ public class EditServlet extends HttpServlet {
 			String info = URLEncoder.encode("编辑内容不能为空，请填入有效信息", "utf-8");
 			response.sendRedirect(request.getContextPath() + "/edit.jsp?alert="+info);
 		}
-		
-		
-	}
+	    
+	    
+	  }             
+	  
+
 
 }

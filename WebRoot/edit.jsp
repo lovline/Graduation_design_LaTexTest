@@ -17,6 +17,22 @@
 	  	});
   	}); 
 	
+	function LoadXMLDoc1(){
+		$.ajax({ 
+			//alert($("#filename").value);
+		    type : "GET", 
+		    //这里有一个问题
+		    url : "upload/$('#filename').value", 
+		    success : function(data){ 
+		        //alert(data);
+		        var editor=CKEDITOR.instances.ckeditor;
+		        editor.setData(data);
+		    }, 
+		    error:function(){ 
+		        alert('fail'); 
+		    } 
+		}); 
+	}
 </script>
 
 <body>
@@ -35,14 +51,17 @@
 	   		</div>		
 	   </div>
 	 </form> 
-	 <form name="form2" id="form2" enctype="multipart/form-data" method="post" action="edit">
+	 <form name="form2" id="form2" enctype="multipart/form-data" method="post" action="upload">
 		<div class="col-md-8 col-md-offset-2">
      		<label for="fileToUpload">Select a File to Upload</label>
-	  		<input type="file" name="fileToUpload" id="fileToUpload" class="btn btn-primary btn-lg btn-block"/>
-   		
+	  		<input type="file" name="file" id="file" class="btn btn-primary btn-lg btn-block"/>
+			<button class="btn btn-primary btn-lg btn-block">(先选择一个上传的文件后点击)上传本地文件</button>
+   			<hr>
+   			<button type="button" onclick="LoadXMLDoc1()" class="btn btn-primary btn-lg btn-block">将上传的文本在ckeditor中显示</button> 
+   			<input id="filename" type="text" value="${ fileName }" />
    		</div>
-
 	</form>
+
    
 </body>
 

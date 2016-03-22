@@ -1,32 +1,26 @@
 <%@ page language="java" import="java.util.*" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ include file="header.jsp" %>
+<script type="text/javascript"> 
+//(A)①获取文本文件方法(传统javascript实现AJAX写法) 
+	function LoadXMLDoc1(){
+		$.ajax({ 
+		    type : "GET", 
+		    url : "upload/test.txt", 
+		    success : function(data){ 
+		        $("#myDiv1").text("Result:"+data) 
+		    }, 
+		    error:function(){ 
+		        alert('fail'); 
+		    } 
+		}); 
+}
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Upload Files using XMLHttpRequest - Minimal</title>
-
-    <script type="text/javascript">
-      function fileSelected() {
-        var file = document.getElementById('fileToUpload');
-       	var filePath = file.value;
-      	//alert(file.value);  //这样得到了文件的目录
-       
-      
-      }
-
-    </script>
-</head>
-<body>
-<form id="form1" enctype="multipart/form-data" method="post" action="">
-	<div class="row">
-     	<label for="fileToUpload">Select a File to Upload</label>
-	  	<input type="file" name="fileToUpload" id="fileToUpload" onchange="fileSelected();"/>
-   		
-   </div>
-
-</form>
-
-</body>
-</html>
+</script>
+<body> 
+<form id="form1" runat="server"> 
+<%-- 获取服务器上的文本文件并显示--%> 
+<div id="myDiv1"><h2>通过ajax改变内容</h2></div> 
+<button id="btnChange1" type="button" onclick="LoadXMLDoc1()">通过 AJAX 改变内容(获取test1.txt上面的文本)</button> 
+</form> 
+</body> 
