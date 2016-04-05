@@ -1,3 +1,4 @@
+<%@page import="com.xidian.graduation.EditBean"%>
 <%@ page language="java" import="java.util.*" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ include file="header.jsp" %>
@@ -16,6 +17,10 @@
 	  		opener.update();
 	  	});
   	}); 
+	
+	
+//	 var editor=CKEDITOR.instances.ckeditor;
+//   editor.setData(data);
 	
 </script>
 
@@ -44,9 +49,29 @@
 	   		</div>		
 	   </div>
 	 </form> 
+	 
+	 <%
+		EditBean eb = new EditBean();
+	 	List<EditBean> list = eb.getContentsFromDatabase();
+	 	request.setAttribute("editContList", list);
+	 %>
+		<div class="col-md-8 col-md-offset-2">	
+			<table class="table table-condensed" id="contents_table">
+				<tr id="contents_header">
+					<td><font size="4px;">记录de数目</font></td>
+					<td><font size="4px;">记录de内容</font></td>
+				</tr>
+				<c:if test="${ isWritten }">
+					<c:forEach items="${ requestScope.editContList }" var="list_message" varStatus="status">
+						<tr id="contents_body">
+							<td id="contents_number">${ status.count }</td>
+							<td><span id="edit_message_contents">${ list_message.getContents() }</span></td>
+						</tr>
+					</c:forEach>	
+				</c:if>
+			</table>
+		</div>			
 
-   
 </body>
-
 
 </html>
