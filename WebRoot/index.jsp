@@ -7,7 +7,8 @@
 		document.title = "My JSP 'Index.jsp' starting page";
 		$("body").css("background-image","url(${pageContext.request.contextPath}/images/indexbg.jpg)");
 		$("#latexedit").click(function() {
-			window.open("edit.jsp","编辑",
+			//这里修改对应的jsp文件可以转向懂吗。
+			window.open("edit2.jsp","编辑",
 					"toolbar=no,menubar=no,scrollbars=no, location=no, status=no, height=400px, width=600px, resizable=no, screenX=600px, screenY=300px, alwaysRaised=yes");
 				});
 		});
